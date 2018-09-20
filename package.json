@@ -1,0 +1,30 @@
+{
+  "name": "ViroTest",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "prestart": "./node_modules/react-viro/bin/run_ngrok.sh",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "reset": "watchman watch-del-all && rm -rf node_modules && npm install"
+  },
+  "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "ngrok": "^3.0.1",
+    "react": "16.3.1",
+    "react-native": "0.55.1",
+    "react-native-paper": "^1.11.1",
+    "react-native-vector-icons": "^5.0.0",
+    "react-navigation": "^2.12.1",
+    "react-viro": "^2.9.1"
+  },
+  "devDependencies": {
+    "babel-jest": "23.4.0",
+    "babel-preset-react-native": "4.0.0",
+    "jest": "23.4.1",
+    "react-test-renderer": "16.3.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

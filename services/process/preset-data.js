@@ -1,0 +1,27 @@
+module.exports = [
+  'chicken',
+  'banana',
+  'naartjie',
+  'citrus',
+  'grapefruit',
+  'roast chicken',
+  'fried chicken',
+  'beef',
+  'fish',
+  'vegetable',
+  'brocolli',
+  'apple',
+  'orange',
+  'chocolate',
+  'lasagne',
+  'pasta',
+  'spaghetti',
+  'sauce',
+  'react',
+  'native',
+  'tools',
+  'pasta',
+  'tomato',
+  'lemon'
+]
+
