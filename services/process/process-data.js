@@ -47,5 +47,31 @@ export function processData(data = {}){
   const responses = data.responses[0]
   const result = 'Not Found'
 
+  if(responses.webDetection.webEntities){
+    const entities = responses.webDetection.webEntities
+
+    const f = entities.filter(entity => {
+      const description = entity.description.toLowerCase()
+      return preset.includes(description)
+    })
+
+    if(f.length > 0){
+      return f[0].description
+    }
+  }
+
+  if(responses.textAnnotations){
+    const textData = responses.textAnnotations.slice(1)
+
+    const f = textData.filter(text => {
+      const description = text.description.toLowerCase()
+      return preset.includes(description)
+    })
+
+    if (f.length > 0) {
+      return f[0].description
+    }
+  }
+
   return result
 }
