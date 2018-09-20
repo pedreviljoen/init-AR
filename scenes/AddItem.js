@@ -15,6 +15,7 @@ import { obtainResults } from '../services/network'
 //dependancies import
 import colors from '../config/colors'
 import objs from '../config/objs'
+import notif from '../services/alert';
 
 export default class AddItem extends Component {
 
@@ -196,7 +197,7 @@ export default class AddItem extends Component {
       case 2:
         await setTimeout(() => { console.log('[BASE64] START') }, 150)
         const base64 = await this.props.arSceneNavigator.viroAppProps.f_takePhoto()
-        console.log('[BASE64] DONE')
+        notif(base64)
         this.setState({ index: 3, base64: base64 })
         break
 

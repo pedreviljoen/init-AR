@@ -31,12 +31,12 @@ export default class Home extends Component {
         * - navigation: https://facebook.github.io/react-native/docs/navigation
         * 
         */ }
-            {/* <Button 
+            <Button 
               raised
               onPress={() => this.props.navigation.navigate('Basket')}
               color={colors.FFred}>
               Create Your Basket
-            </Button> */}
+            </Button>
         </View>
 
       </View>

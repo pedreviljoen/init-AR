@@ -1,6 +1,7 @@
 module.exports = [
   'chicken',
   'banana',
+  'cucumber',
   'naartjie',
   'citrus',
   'grapefruit',
