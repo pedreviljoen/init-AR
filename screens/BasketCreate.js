@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { AsyncStorage, View, StyleSheet } from 'react-native'
+import { AsyncStorage, View, StyleSheet, Platform } from 'react-native'
 import { ViroARSceneNavigator, ViroText } from 'react-viro'
 import { Button } from 'react-native-paper'
 import { encode64 } from '../encode/encode-base'
@@ -8,6 +8,8 @@ import asyncStrKeys from '../config/asyncStrKeys'
 //import the two scenes required by the ViroARSceneNavigator
 var BasketView = require('../scenes/BasketView')
 var AddItem = require('../scenes/AddItem')
+
+const isAndroid = Platform.OS === 'ios' ? false : true
 
 export default class BasketCreate extends Component {
   constructor(props) {
@@ -135,7 +137,13 @@ export default class BasketCreate extends Component {
           this.setState({ msg: 'Error' })
         }
         // retrieve the screenshot url
-        const uri = rectDict.url
+        let uri = ''
+        if(isAndroid){
+          uri = "file://" + rectDict.url
+        } else {
+          uri = rectDict.url
+        }
+        // const uri = rectDict.url
         const base64 = await encode64(uri)
         resolve(base64)
       }, reject)
