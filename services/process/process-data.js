@@ -47,33 +47,5 @@ export function processData(data = {}){
   const responses = data.responses[0]
   const result = 'Not Found'
 
-  if(responses.webDetection.webEntities){
-    console.log('Web entities available')
-    const entities = responses.webDetection.webEntities
-
-    const f = entities.filter(entity => {
-      const description = entity.description.toLowerCase()
-      return preset.includes(description)
-    })
-
-    if(f.length > 0){
-      return f[0].description
-    }
-  }
-
-  if(responses.textAnnotations){
-    console.log('Text annotations available')
-    const textData = responses.textAnnotations.slice(1)
-
-    const f = textData.filter(text => {
-      const description = text.description.toLowerCase()
-      return preset.includes(description)
-    })
-
-    if (f.length > 0) {
-      return f[0].description
-    }
-  }
-
   return result
 }

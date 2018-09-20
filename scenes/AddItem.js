@@ -90,21 +90,6 @@ export default class AddItem extends Component {
         * Case 3 is automatically render and removed by the existing GV functionality. For documentation on rendering 3D objects see: 
         *   Viro 3DObject: https://docs.viromedia.com/docs/3d-objects 
         */
-      return(
-        <ViroNode
-        position={this.state.position} 
-        >
-          <Viro3DObject
-          source={objs.loading}
-          materials={["loading"]}
-          position={[0,0,0]}
-          scale={[.05, .05, .05]}
-          color={colors.red}
-          rotation={[90,0,0]}
-          animation={{name:'loopRotate', run:true, loop:true}}
-          type="OBJ" />
-        </ViroNode>
-        )
       break
 
       case 4:
@@ -130,41 +115,6 @@ export default class AddItem extends Component {
             this._resetView()}
           }
         */
-      return(
-        <ViroNode
-        position={this.state.position} 
-        >
-          <Viro3DObject
-          source={objs.sphere}
-          materials={["yes"]}
-          position={[0.07,0.14,0]} 
-          scale={[.012, .012, .012]} 
-          //animation={{name:'buttonAppear', run:true}} 
-          onClick={() => {this.props.arSceneNavigator.viroAppProps.f_confirmItem(this.state.GooglVisResult, this.state.position) 
-            this.setState({index: 5})}
-          }
-          type="OBJ" />
-          
-          <Viro3DObject
-          source={objs.square}
-          materials={["no"]}
-          position={[-0.07,0.14,0]} 
-          scale={[.00001, .00001, .00001]} 
-          animation={{name:'buttonAppear', run:true}} 
-          onClick={() => {
-            this._resetView()}
-          }
-          type="OBJ" />
-
-          <ViroText 
-          text={`Is this ${this.state.GooglVisResult}?`}
-          position={[0,0.02,0]} 
-          scale={[.12, .12, .12]} 
-          style={{fontFamily:"Arial", fontSize:70, fontWeight:'400', color: colors.white, textAlignVertical: 'center', textAlign: 'center'}} 
-          extrusionDepth={5} 
-          width={15} height={2}/>
-        </ViroNode>
-        )
       break
 
       case 5:
